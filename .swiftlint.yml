@@ -1,0 +1,4 @@
+excluded:
+- Carthage/
+
+line_length: 300

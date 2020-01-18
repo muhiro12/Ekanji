@@ -135,6 +135,7 @@
 				AD6E398D23D1D88400D1261E /* Sources */,
 				AD6E398E23D1D88400D1261E /* Frameworks */,
 				AD6E398F23D1D88400D1261E /* Resources */,
+				AD6E39D423D2C3A400D1261E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -250,6 +251,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AD6E39D423D2C3A400D1261E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect --format\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AD6E398D23D1D88400D1261E /* Sources */ = {
