@@ -1,24 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FGc-Om-Gwo">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Ekanji" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLq-Kz-6Dm">
+                                <rect key="frame" x="157" y="562" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="QBA-yh-smM"/>
+                                    <constraint firstAttribute="width" constant="100" id="xrl-oJ-cS4"/>
+                                </constraints>
+                                <state key="normal" title="Convert"/>
+                                <connections>
+                                    <action selector="tapConvert:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kw8-JH-BVW"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HfO-6q-KIN">
+                                <rect key="frame" x="87" y="334" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="NHA-TT-wwJ"/>
+                                    <constraint firstAttribute="height" constant="128" id="SO1-hi-PDs"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DLq-Kz-6Dm" firstAttribute="top" secondItem="HfO-6q-KIN" secondAttribute="bottom" constant="100" id="DwU-T0-hdk"/>
+                            <constraint firstItem="HfO-6q-KIN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="O1z-OV-xTe"/>
+                            <constraint firstItem="HfO-6q-KIN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="SN2-26-Fkw"/>
+                            <constraint firstItem="DLq-Kz-6Dm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jhX-us-27A"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house.fill" id="Uxc-HK-TnV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1048" y="-188"/>
+        </scene>
+        <!--History View Controller-->
+        <scene sceneID="caE-Vv-Re9">
+            <objects>
+                <viewController id="9uA-3a-zGb" customClass="HistoryViewController" customModule="Ekanji" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dfX-eN-BeP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FDg-3U-JwM">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sve-sy-FB4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Lb7-x5-GQq" firstAttribute="bottom" secondItem="FDg-3U-JwM" secondAttribute="bottom" id="DBd-qp-siM"/>
+                            <constraint firstItem="FDg-3U-JwM" firstAttribute="leading" secondItem="Lb7-x5-GQq" secondAttribute="leading" id="Gcd-YK-B7L"/>
+                            <constraint firstItem="sve-sy-FB4" firstAttribute="top" secondItem="Lb7-x5-GQq" secondAttribute="top" id="Heo-Aa-eNE"/>
+                            <constraint firstItem="sve-sy-FB4" firstAttribute="leading" secondItem="Lb7-x5-GQq" secondAttribute="leading" id="ICW-hy-Wne"/>
+                            <constraint firstItem="sve-sy-FB4" firstAttribute="trailing" secondItem="Lb7-x5-GQq" secondAttribute="trailing" id="KJq-ez-zVA"/>
+                            <constraint firstItem="FDg-3U-JwM" firstAttribute="top" secondItem="sve-sy-FB4" secondAttribute="bottom" symbolic="YES" id="dqf-hh-vBR"/>
+                            <constraint firstItem="Lb7-x5-GQq" firstAttribute="trailing" secondItem="FDg-3U-JwM" secondAttribute="trailing" id="mHR-Kj-COA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Lb7-x5-GQq"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="history" id="1Z8-mE-d5C"/>
+                    <connections>
+                        <outlet property="tableView" destination="FDg-3U-JwM" id="v1s-qu-mR1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FS1-iH-nNS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1048" y="473"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xRX-Vz-vbz">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="FGc-Om-Gwo" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nER-rq-lXw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="tPs-hh-pye"/>
+                        <segue destination="9uA-3a-zGb" kind="relationship" relationship="viewControllers" id="o6N-uX-RUB"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1qh-WF-fr5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="house.fill" width="20" height="18"/>
+    </resources>
 </document>
