@@ -50,6 +50,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" id="Uxc-HK-TnV"/>
+                    <connections>
+                        <outlet property="textView" destination="HfO-6q-KIN" id="LgF-bh-Ax0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

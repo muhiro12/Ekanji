@@ -10,12 +10,25 @@ import UIKit
 
 class ResultViewController: UIViewController {
 
+    @IBOutlet weak var originalTextView: UITextView!
+    @IBOutlet weak var convertedTextView: UITextView!
+
+    private var presenter: ResultPresenterInput!
+    func inject(presenter: ResultPresenterInput) {
+        self.presenter = presenter
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        originalTextView.text = presenter.original
+        convertedTextView.text = presenter.converted
     }
 
     @IBAction func tabClose(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true)
     }
 
 }
+
+extension ResultViewController: ResultPresenterOutput {}

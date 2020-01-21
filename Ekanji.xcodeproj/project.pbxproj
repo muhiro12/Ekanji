@@ -17,6 +17,9 @@
 		AD6E39DC23D2DF6D00D1261E /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39DB23D2DF6D00D1261E /* HistoryViewController.swift */; };
 		AD6E39DF23D2DF7E00D1261E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39DD23D2DF7E00D1261E /* ResultViewController.swift */; };
 		AD6E39E023D2DF7E00D1261E /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AD6E39DE23D2DF7E00D1261E /* ResultViewController.xib */; };
+		AD6E39E223D2FFD600D1261E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39E123D2FFD600D1261E /* HomePresenter.swift */; };
+		AD6E39E823D3CD8300D1261E /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39E723D3CD8300D1261E /* HistoryPresenter.swift */; };
+		AD6E39F423D5DF3300D1261E /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39F323D5DF3300D1261E /* ResultPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		AD6E39DB23D2DF6D00D1261E /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		AD6E39DD23D2DF7E00D1261E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		AD6E39DE23D2DF7E00D1261E /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		AD6E39E123D2FFD600D1261E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		AD6E39E723D3CD8300D1261E /* HistoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
+		AD6E39F323D5DF3300D1261E /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6E39D923D2DF6100D1261E /* HomeViewController.swift */,
+				AD6E39E123D2FFD600D1261E /* HomePresenter.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6E39DB23D2DF6D00D1261E /* HistoryViewController.swift */,
+				AD6E39E723D3CD8300D1261E /* HistoryPresenter.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				AD6E39DD23D2DF7E00D1261E /* ResultViewController.swift */,
+				AD6E39F323D5DF3300D1261E /* ResultPresenter.swift */,
 				AD6E39DE23D2DF7E00D1261E /* ResultViewController.xib */,
 			);
 			path = Result;
@@ -312,8 +321,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6E39DF23D2DF7E00D1261E /* ResultViewController.swift in Sources */,
+				AD6E39E823D3CD8300D1261E /* HistoryPresenter.swift in Sources */,
 				AD6E399523D1D88400D1261E /* AppDelegate.swift in Sources */,
 				AD6E39DA23D2DF6100D1261E /* HomeViewController.swift in Sources */,
+				AD6E39F423D5DF3300D1261E /* ResultPresenter.swift in Sources */,
+				AD6E39E223D2FFD600D1261E /* HomePresenter.swift in Sources */,
 				AD6E39DC23D2DF6D00D1261E /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
