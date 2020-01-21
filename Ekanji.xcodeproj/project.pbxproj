@@ -24,6 +24,7 @@
 		AD6E39FB23D71AF500D1261E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39FA23D71AF500D1261E /* HomeModel.swift */; };
 		AD6E39FF23D7211900D1261E /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39FE23D7211900D1261E /* HistoryModel.swift */; };
 		ADBC1FC023D74DD2004138DF /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = ADBC1FBF23D74DD2004138DF /* Moya */; };
+		ADBC1FC523D761FA004138DF /* Hydra in Frameworks */ = {isa = PBXBuildFile; productRef = ADBC1FC423D761FA004138DF /* Hydra */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADBC1FC023D74DD2004138DF /* Moya in Frameworks */,
+				ADBC1FC523D761FA004138DF /* Hydra in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +199,7 @@
 			name = Ekanji;
 			packageProductDependencies = (
 				ADBC1FBF23D74DD2004138DF /* Moya */,
+				ADBC1FC423D761FA004138DF /* Hydra */,
 			);
 			productName = Ekanji;
 			productReference = AD6E399123D1D88400D1261E /* Ekanji.app */;
@@ -272,6 +275,7 @@
 			mainGroup = AD6E398823D1D88400D1261E;
 			packageReferences = (
 				ADBC1FBE23D74DD2004138DF /* XCRemoteSwiftPackageReference "Moya" */,
+				ADBC1FC323D761FA004138DF /* XCRemoteSwiftPackageReference "Hydra" */,
 			);
 			productRefGroup = AD6E399223D1D88400D1261E /* Products */;
 			projectDirPath = "";
@@ -681,6 +685,14 @@
 				minimumVersion = 13.0.1;
 			};
 		};
+		ADBC1FC323D761FA004138DF /* XCRemoteSwiftPackageReference "Hydra" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/Hydra.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -688,6 +700,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ADBC1FBE23D74DD2004138DF /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		ADBC1FC423D761FA004138DF /* Hydra */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADBC1FC323D761FA004138DF /* XCRemoteSwiftPackageReference "Hydra" */;
+			productName = Hydra;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
