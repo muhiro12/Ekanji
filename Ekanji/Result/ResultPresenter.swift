@@ -11,20 +11,31 @@ import Foundation
 protocol ResultPresenterInput {
     var original: String { get }
     var converted: String { get }
+    func tappedUpdate(text: String)
 }
 
-protocol ResultPresenterOutput: AnyObject {}
+protocol ResultPresenterOutput: AnyObject {
+    func updateTextView()
+}
 
 final class ResultPresenter: ResultPresenterInput {
 
     private weak var view: ResultPresenterOutput!
+    private var model: ResultModelInput
 
-    var original: String
-    var converted: String
+    var original: String {
+        return model.original
+    }
+    var converted: String {
+        return model.converted
+    }
 
-    init(view: ResultPresenterOutput, original: String, converted: String) {
+    init(view: ResultPresenterOutput, model: ResultModelInput) {
         self.view = view
-        self.original = original
-        self.converted = converted
+        self.model = model
+    }
+
+    func tappedUpdate(text: String) {
+        model.update(original: text, completion: view.updateTextView)
     }
 }

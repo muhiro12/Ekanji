@@ -10,39 +10,56 @@ import Foundation
 
 protocol HistoryPresenterInput {
     var numberOfHistories: Int { get }
-    func history(forRow row: Int) -> String?
+    func changedSearchBarText(to text: String)
+    func history(forRow row: Int) -> History?
     func selectedRow(at indexPath: IndexPath)
 }
 
 protocol HistoryPresenterOutput: AnyObject {
+    func reloadTableView()
     func transitionToResult(original: String, converted: String)
 }
 
 final class HistoryPresenter: HistoryPresenterInput {
 
-    private let histories = ["abc", "def", "ghi"]
     private weak var view: HistoryPresenterOutput!
+    private var model: HistoryModelInput
+
+    private lazy var histories = model.fetchHistories()
+    private lazy var historiesForDisplay = histories
 
     var numberOfHistories: Int {
-        return histories.count
+        return historiesForDisplay.count
     }
 
-    init(view: HistoryPresenterOutput) {
+    init(view: HistoryPresenterOutput, model: HistoryModelInput) {
         self.view = view
+        self.model = model
     }
 
-    func history(forRow row: Int) -> String? {
-        guard row < histories.count else {
+    func changedSearchBarText(to text: String) {
+        if text.isEmpty {
+            historiesForDisplay = histories
+        } else {
+            historiesForDisplay = histories.filter {
+                $0.original.contains(text) || $0.converted.contains(text)
+            }
+        }
+        view.reloadTableView()
+    }
+
+    func history(forRow row: Int) -> History? {
+        guard row < historiesForDisplay.count else {
             return nil
         }
-        return histories[row]
+        return historiesForDisplay[row]
     }
 
     func selectedRow(at indexPath: IndexPath) {
         guard let history = history(forRow: indexPath.row) else {
             return
         }
-        view.transitionToResult(original: history, converted: "History converted")
+        view.transitionToResult(original: history.original, converted: history.converted)
     }
 
 }

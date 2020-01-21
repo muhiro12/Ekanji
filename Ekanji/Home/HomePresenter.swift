@@ -20,17 +20,20 @@ protocol HomePresenterOutput: AnyObject {
 final class HomePresenter: HomePresenterInput {
 
     private weak var view: HomePresenterOutput!
+    private var model: HomeModelInput
 
-    init(view: HomePresenterOutput) {
+    init(view: HomePresenterOutput, model: HomeModelInput) {
         self.view = view
+        self.model = model
     }
 
     func tappedConvert(text: String) {
-        // TODO: API 呼び出し
-        if true {
-            view.transitionToResult(original: text, converted: text.uppercased())
-        } else {
-            view.showAlert(title: "title", message: "message")
+        model.convert(text: text) { result in
+            if true {
+                self.view.transitionToResult(original: text, converted: result)
+            } else {
+                self.view.showAlert(title: "title", message: "message")
+            }
         }
     }
 

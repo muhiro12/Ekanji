@@ -89,6 +89,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="history" id="1Z8-mE-d5C"/>
                     <connections>
+                        <outlet property="searchBar" destination="sve-sy-FB4" id="lHX-3l-nzL"/>
                         <outlet property="tableView" destination="FDg-3U-JwM" id="v1s-qu-mR1"/>
                     </connections>
                 </viewController>

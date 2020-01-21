@@ -25,10 +25,21 @@ class ResultViewController: UIViewController {
         convertedTextView.text = presenter.converted
     }
 
+    @IBAction func tapUpdate(_ sender: Any) {
+        presenter.tappedUpdate(text: originalTextView.text)
+    }
+
     @IBAction func tabClose(_ sender: Any) {
         self.dismiss(animated: true)
     }
 
 }
 
-extension ResultViewController: ResultPresenterOutput {}
+extension ResultViewController: ResultPresenterOutput {
+
+    func updateTextView() {
+        originalTextView.text = presenter.original
+        convertedTextView.text = presenter.converted
+    }
+
+}
