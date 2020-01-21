@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		AD6E39F923D5FC8B00D1261E /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39F823D5FC8B00D1261E /* ResultModel.swift */; };
 		AD6E39FB23D71AF500D1261E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39FA23D71AF500D1261E /* HomeModel.swift */; };
 		AD6E39FF23D7211900D1261E /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39FE23D7211900D1261E /* HistoryModel.swift */; };
+		ADBC1FC023D74DD2004138DF /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = ADBC1FBF23D74DD2004138DF /* Moya */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADBC1FC023D74DD2004138DF /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +195,9 @@
 			dependencies = (
 			);
 			name = Ekanji;
+			packageProductDependencies = (
+				ADBC1FBF23D74DD2004138DF /* Moya */,
+			);
 			productName = Ekanji;
 			productReference = AD6E399123D1D88400D1261E /* Ekanji.app */;
 			productType = "com.apple.product-type.application";
@@ -265,6 +270,9 @@
 				Base,
 			);
 			mainGroup = AD6E398823D1D88400D1261E;
+			packageReferences = (
+				ADBC1FBE23D74DD2004138DF /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = AD6E399223D1D88400D1261E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -663,6 +671,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ADBC1FBE23D74DD2004138DF /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADBC1FBF23D74DD2004138DF /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADBC1FBE23D74DD2004138DF /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD6E398923D1D88400D1261E /* Project object */;
 }
