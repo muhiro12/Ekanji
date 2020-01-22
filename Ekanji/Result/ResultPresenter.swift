@@ -15,7 +15,7 @@ protocol ResultPresenterInput {
 }
 
 protocol ResultPresenterOutput: AnyObject {
-    func updateTextView()
+    func updateTextView(original: String, converted: String)
 }
 
 final class ResultPresenter: ResultPresenterInput {
@@ -36,6 +36,14 @@ final class ResultPresenter: ResultPresenterInput {
     }
 
     func tappedUpdate(text: String) {
-        model.update(original: text, completion: view.updateTextView)
+        do {
+            try model.update(original: text) { result in
+                DispatchQueue.main.async {
+                    self.view.updateTextView(original: text, converted: result)
+                }
+            }
+        } catch {
+            print(error)
+        }
     }
 }

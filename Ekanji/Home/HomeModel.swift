@@ -7,17 +7,20 @@
 //
 
 import Foundation
+import Hydra
 
 protocol HomeModelInput {
-    func convert(text: String, completion: ((String) -> Void)?)
+    func convert(text: String, completion: ((String) -> Void)?) throws
 }
 
 final class HomeModel: HomeModelInput {
 
-    func convert(text: String, completion: ((String) -> Void)?) {
-        // TODO: API処理 追加
-        let result = text.uppercased()
-        completion?(result)
+    func convert(text: String, completion: ((String) -> Void)?) throws {
+        do {
+            try KanaConverter.hiragana.run(with: text).then { result in
+                completion?(result)
+            }
+        }
 
         // TODO: DB保存処理 追加
     }

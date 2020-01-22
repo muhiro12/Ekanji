@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,11 @@
 		AD6E39F923D5FC8B00D1261E /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39F823D5FC8B00D1261E /* ResultModel.swift */; };
 		AD6E39FB23D71AF500D1261E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39FA23D71AF500D1261E /* HomeModel.swift */; };
 		AD6E39FF23D7211900D1261E /* HistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6E39FE23D7211900D1261E /* HistoryModel.swift */; };
+		ADBC1FC023D74DD2004138DF /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = ADBC1FBF23D74DD2004138DF /* Moya */; };
+		ADBC1FC523D761FA004138DF /* Hydra in Frameworks */ = {isa = PBXBuildFile; productRef = ADBC1FC423D761FA004138DF /* Hydra */; };
+		ADBC1FC823D76350004138DF /* GooAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBC1FC723D76350004138DF /* GooAPI.swift */; };
+		ADBC1FCD23D8635D004138DF /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBC1FCC23D8635D004138DF /* Environment.swift */; };
+		ADBC1FD123D867FD004138DF /* KanaConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADBC1FD023D867FD004138DF /* KanaConverter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,9 @@
 		AD6E39F823D5FC8B00D1261E /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		AD6E39FA23D71AF500D1261E /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		AD6E39FE23D7211900D1261E /* HistoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryModel.swift; sourceTree = "<group>"; };
+		ADBC1FC723D76350004138DF /* GooAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooAPI.swift; sourceTree = "<group>"; };
+		ADBC1FCC23D8635D004138DF /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		ADBC1FD023D867FD004138DF /* KanaConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KanaConverter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADBC1FC023D74DD2004138DF /* Moya in Frameworks */,
+				ADBC1FC523D761FA004138DF /* Hydra in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,9 +130,11 @@
 				AD6E399D23D1D88500D1261E /* Assets.xcassets */,
 				AD6E399F23D1D88500D1261E /* LaunchScreen.storyboard */,
 				AD6E39A223D1D88500D1261E /* Info.plist */,
+				ADBC1FC623D7633F004138DF /* Common */,
 				AD6E39D623D2DF0000D1261E /* Home */,
 				AD6E39D723D2DF1900D1261E /* History */,
 				AD6E39D823D2DF2700D1261E /* Result */,
+				ADBC1FC923D8629F004138DF /* Constants */,
 			);
 			path = Ekanji;
 			sourceTree = "<group>";
@@ -176,6 +188,23 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
+		ADBC1FC623D7633F004138DF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ADBC1FC723D76350004138DF /* GooAPI.swift */,
+				ADBC1FD023D867FD004138DF /* KanaConverter.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		ADBC1FC923D8629F004138DF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				ADBC1FCC23D8635D004138DF /* Environment.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -193,6 +222,10 @@
 			dependencies = (
 			);
 			name = Ekanji;
+			packageProductDependencies = (
+				ADBC1FBF23D74DD2004138DF /* Moya */,
+				ADBC1FC423D761FA004138DF /* Hydra */,
+			);
 			productName = Ekanji;
 			productReference = AD6E399123D1D88400D1261E /* Ekanji.app */;
 			productType = "com.apple.product-type.application";
@@ -265,6 +298,10 @@
 				Base,
 			);
 			mainGroup = AD6E398823D1D88400D1261E;
+			packageReferences = (
+				ADBC1FBE23D74DD2004138DF /* XCRemoteSwiftPackageReference "Moya" */,
+				ADBC1FC323D761FA004138DF /* XCRemoteSwiftPackageReference "Hydra" */,
+			);
 			productRefGroup = AD6E399223D1D88400D1261E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -330,8 +367,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6E39DF23D2DF7E00D1261E /* ResultViewController.swift in Sources */,
+				ADBC1FCD23D8635D004138DF /* Environment.swift in Sources */,
+				ADBC1FD123D867FD004138DF /* KanaConverter.swift in Sources */,
 				AD6E39E823D3CD8300D1261E /* HistoryPresenter.swift in Sources */,
 				AD6E39FB23D71AF500D1261E /* HomeModel.swift in Sources */,
+				ADBC1FC823D76350004138DF /* GooAPI.swift in Sources */,
 				AD6E399523D1D88400D1261E /* AppDelegate.swift in Sources */,
 				AD6E39DA23D2DF6100D1261E /* HomeViewController.swift in Sources */,
 				AD6E39F923D5FC8B00D1261E /* ResultModel.swift in Sources */,
@@ -663,6 +703,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ADBC1FBE23D74DD2004138DF /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.1;
+			};
+		};
+		ADBC1FC323D761FA004138DF /* XCRemoteSwiftPackageReference "Hydra" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/Hydra.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ADBC1FBF23D74DD2004138DF /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADBC1FBE23D74DD2004138DF /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		ADBC1FC423D761FA004138DF /* Hydra */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ADBC1FC323D761FA004138DF /* XCRemoteSwiftPackageReference "Hydra" */;
+			productName = Hydra;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD6E398923D1D88400D1261E /* Project object */;
 }
