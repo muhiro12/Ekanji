@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import Hydra
 
 protocol ResultModelInput {
     var original: String { get }
     var converted: String { get }
-    func update(original: String, completion: (() -> Void)?)
+    func update(original: String, completion: ((String) -> Void)?) throws
 }
 
 final class ResultModel: ResultModelInput {
@@ -23,10 +24,14 @@ final class ResultModel: ResultModelInput {
         self.converted = converted
     }
 
-    func update(original: String, completion: (() -> Void)? = nil) {
+    func update(original: String, completion: ((String) -> Void)?) throws {
         self.original = original
-        // TODO: API処理 追加
-        self.converted = original.uppercased()
-        completion?()
+
+        do {
+            try KanaConverter.hiragana.run(with: original).then { result in
+                self.converted = result
+                completion?(result)
+            }
+        }
     }
 }

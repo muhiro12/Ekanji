@@ -37,9 +37,9 @@ class ResultViewController: UIViewController {
 
 extension ResultViewController: ResultPresenterOutput {
 
-    func updateTextView() {
-        originalTextView.text = presenter.original
-        convertedTextView.text = presenter.converted
+    func updateTextView(original: String, converted: String) {
+        originalTextView.text = original
+        convertedTextView.text = converted
     }
 
 }

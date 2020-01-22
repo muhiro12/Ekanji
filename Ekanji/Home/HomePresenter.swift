@@ -28,12 +28,14 @@ final class HomePresenter: HomePresenterInput {
     }
 
     func tappedConvert(text: String) {
-        model.convert(text: text) { result in
-            if true {
-                self.view.transitionToResult(original: text, converted: result)
-            } else {
-                self.view.showAlert(title: "title", message: "message")
+        do {
+            try model.convert(text: text) { result in
+                DispatchQueue.main.async {
+                    self.view.transitionToResult(original: text, converted: result)
+                }
             }
+        } catch {
+            self.view.showAlert(title: "Sorry", message: error.localizedDescription)
         }
     }
 
