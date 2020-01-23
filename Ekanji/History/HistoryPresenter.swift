@@ -11,11 +11,13 @@ import Foundation
 protocol HistoryPresenterInput {
     var numberOfHistories: Int { get }
     func changedSearchBarText(to text: String)
+    func willAppear()
     func history(forRow row: Int) -> History?
     func selectedRow(at indexPath: IndexPath)
 }
 
 protocol HistoryPresenterOutput: AnyObject {
+    func clearSearchBar()
     func reloadTableView()
     func transitionToResult(original: String, converted: String)
 }
@@ -25,7 +27,7 @@ final class HistoryPresenter: HistoryPresenterInput {
     private weak var view: HistoryPresenterOutput!
     private var model: HistoryModelInput
 
-    private lazy var histories = model.fetchHistories()
+    private lazy var histories = model.fetchHistories(completion: nil)
     private lazy var historiesForDisplay = histories
 
     var numberOfHistories: Int {
@@ -46,6 +48,16 @@ final class HistoryPresenter: HistoryPresenterInput {
             }
         }
         view.reloadTableView()
+    }
+
+    func willAppear() {
+        histories = model.fetchHistories {
+            DispatchQueue.main.async {
+                self.historiesForDisplay = self.histories
+                self.view.clearSearchBar()
+                self.view.reloadTableView()
+            }
+        }
     }
 
     func history(forRow row: Int) -> History? {

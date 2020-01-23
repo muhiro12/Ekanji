@@ -30,6 +30,8 @@ final class ResultModel: ResultModelInput {
         do {
             try KanaConverter.hiragana.run(with: original).then { result in
                 self.converted = result
+                let database = Database()
+                database.save(original: original, converted: result)
                 completion?(result)
             }
         }

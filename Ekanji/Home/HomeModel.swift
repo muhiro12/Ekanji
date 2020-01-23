@@ -18,11 +18,11 @@ final class HomeModel: HomeModelInput {
     func convert(text: String, completion: ((String) -> Void)?) throws {
         do {
             try KanaConverter.hiragana.run(with: text).then { result in
+                let database = Database()
+                database.save(original: text, converted: result)
                 completion?(result)
             }
         }
-
-        // TODO: DB保存処理 追加
     }
 
 }
