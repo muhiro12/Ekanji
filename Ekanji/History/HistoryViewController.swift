@@ -21,6 +21,8 @@ class HistoryViewController: UIViewController {
         searchBar.delegate = self
         tableView.dataSource = self
         tableView.delegate = self
+
+        tableView.keyboardDismissMode = .onDrag
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +48,9 @@ extension HistoryViewController: HistoryPresenterOutput {
         let model = ResultModel(original: original, converted: converted)
         let presenter = ResultPresenter(view: view, model: model)
         view.inject(presenter: presenter)
+
+        view.modalPresentationStyle = .fullScreen
+
         present(view, animated: true)
     }
 
@@ -75,8 +80,11 @@ extension HistoryViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = presenter.history(forRow: indexPath.row)?.original
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell") as? HistoryTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.originalLabel.text = presenter.history(forRow: indexPath.row)?.original
+        cell.convertedLabel.text = presenter.history(forRow: indexPath.row)?.converted
         return cell
     }
 

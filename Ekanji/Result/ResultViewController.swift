@@ -12,6 +12,7 @@ class ResultViewController: UIViewController {
 
     @IBOutlet weak var originalTextView: UITextView!
     @IBOutlet weak var convertedTextView: UITextView!
+    @IBOutlet weak var updateButton: UIButton!
 
     private var presenter: ResultPresenterInput!
     func inject(presenter: ResultPresenterInput) {
@@ -23,6 +24,19 @@ class ResultViewController: UIViewController {
 
         originalTextView.text = presenter.original
         convertedTextView.text = presenter.converted
+
+        hero.isEnabled = true
+        originalTextView.hero.id = "temp"
+        convertedTextView.hero.modifiers = [.translate(CGPoint(x: 0, y: 800))]
+        updateButton.hero.modifiers = [.fade, .scale(), .translate(CGPoint(x: 0, y: 200))]
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [
+            UIColor.systemTeal.cgColor,
+            UIColor.white.cgColor
+        ]
+        gradientLayer.frame = view.bounds
+        view.layer.insertSublayer(gradientLayer, at: 0)
     }
 
     @IBAction func tapUpdate(_ sender: Any) {
@@ -30,7 +44,15 @@ class ResultViewController: UIViewController {
     }
 
     @IBAction func tabClose(_ sender: Any) {
-        self.dismiss(animated: true)
+        dismiss(animated: true)
+    }
+
+    @IBAction func recognizeSwipe(_ sender: Any) {
+        dismiss(animated: true)
+    }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
     }
 
 }
