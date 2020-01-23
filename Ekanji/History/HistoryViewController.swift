@@ -23,9 +23,19 @@ class HistoryViewController: UIViewController {
         tableView.delegate = self
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        presenter.willAppear()
+    }
+
 }
 
 extension HistoryViewController: HistoryPresenterOutput {
+
+    func clearSearchBar() {
+        searchBar.text = ""
+    }
 
     func reloadTableView() {
         tableView.reloadData()

@@ -9,18 +9,17 @@
 import Foundation
 
 protocol HistoryModelInput {
-    func fetchHistories() -> [History]
+    func fetchHistories(completion: (() -> Void)?) -> [History]
 }
 
 final class HistoryModel: HistoryModelInput {
 
-    func fetchHistories() -> [History] {
-        // TODO: DB取得処理 追加
-        let histories = [
-            History(original: "first", converted: "FIRST"),
-            History(original: "second", converted: "SECOND"),
-            History(original: "third", converted: "THIRD")
-        ]
+    func fetchHistories(completion: (() -> Void)?) -> [History] {
+        let database = Database()
+        let histories = database.fetch().map {
+            History(original: $0.original, converted: $0.converted)
+        }
+        completion?()
         return histories
     }
 
