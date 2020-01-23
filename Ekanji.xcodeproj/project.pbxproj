@@ -56,7 +56,7 @@
 		AD1B5B6F23D8B90A00FB98A6 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		AD1B5BA923DA2C4900FB98A6 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		AD1B5BAB23DA397C00FB98A6 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
-		AD6E399123D1D88400D1261E /* Ekanji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ekanji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD6E399123D1D88400D1261E /* よめる.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "よめる.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD6E399423D1D88400D1261E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD6E399B23D1D88400D1261E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD6E399D23D1D88500D1261E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		AD6E399223D1D88400D1261E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AD6E399123D1D88400D1261E /* Ekanji.app */,
+				AD6E399123D1D88400D1261E /* よめる.app */,
 				AD6E39A723D1D88500D1261E /* EkanjiTests.xctest */,
 				AD6E39B223D1D88500D1261E /* EkanjiUITests.xctest */,
 			);
@@ -242,7 +242,7 @@
 				AD1B5B9923DA0A8E00FB98A6 /* Hero */,
 			);
 			productName = Ekanji;
-			productReference = AD6E399123D1D88400D1261E /* Ekanji.app */;
+			productReference = AD6E399123D1D88400D1261E /* よめる.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AD6E39A623D1D88500D1261E /* EkanjiTests */ = {
@@ -580,7 +580,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nakano.hiromu.Ekanji;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = Ekanji;
+				PRODUCT_NAME = "よめる";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -599,7 +600,8 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nakano.hiromu.Ekanji;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = Ekanji;
+				PRODUCT_NAME = "よめる";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
