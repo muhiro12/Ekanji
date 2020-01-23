@@ -71,7 +71,8 @@ final class HistoryPresenter: HistoryPresenterInput {
         guard let history = history(forRow: indexPath.row) else {
             return
         }
-        view.transitionToResult(original: history.original, converted: history.converted)
+        view.transitionToResult(original: history.original,
+                                converted: history.converted)
     }
 
 }
