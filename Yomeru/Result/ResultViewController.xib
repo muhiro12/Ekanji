@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultViewController" customModule="Ekanji" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultViewController" customModule="Yomeru" customModuleProvider="target">
             <connections>
                 <outlet property="convertedTextView" destination="5Bi-Bl-scZ" id="Kq8-2Y-RwE"/>
                 <outlet property="originalTextView" destination="A5M-ps-ZA1" id="ARS-UT-sU6"/>
@@ -21,7 +21,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-ps-ZA1" customClass="CustomTextView" customModule="Ekanji" customModuleProvider="target">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-ps-ZA1" customClass="CustomTextView" customModule="Yomeru" customModuleProvider="target">
                     <rect key="frame" x="57" y="188" width="300" height="185"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
@@ -57,7 +57,7 @@
                         <action selector="tabClose:" destination="-1" eventType="touchUpInside" id="ZUL-zY-51u"/>
                     </connections>
                 </button>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Bi-Bl-scZ" customClass="CustomTextView" customModule="Ekanji" customModuleProvider="target">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5Bi-Bl-scZ" customClass="CustomTextView" customModule="Yomeru" customModuleProvider="target">
                     <rect key="frame" x="57" y="523" width="300" height="185"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>

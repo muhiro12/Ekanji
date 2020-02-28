@@ -1,6 +1,6 @@
 //
 //  GooAPI.swift
-//  Ekanji
+//  Yomeru
 //
 //  Created by Hiromu Nakano on 2020/01/22.
 //  Copyright © 2020 Hiromu Nakano. All rights reserved.
