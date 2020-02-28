@@ -13,6 +13,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var originalTextView: UITextView!
     @IBOutlet weak var convertedTextView: UITextView!
     @IBOutlet weak var updateButton: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
 
     private var presenter: ResultPresenterInput!
     func inject(presenter: ResultPresenterInput) {
@@ -62,6 +63,16 @@ extension ResultViewController: ResultPresenterOutput {
     func updateTextView(original: String, converted: String) {
         originalTextView.text = original
         convertedTextView.text = converted
+    }
+
+    func startLoading() {
+        indicator.startAnimating()
+        view.isUserInteractionEnabled = false
+    }
+
+    func stopLoading() {
+        indicator.stopAnimating()
+        view.isUserInteractionEnabled = true
     }
 
 }

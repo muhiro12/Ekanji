@@ -16,6 +16,8 @@ protocol ResultPresenterInput {
 
 protocol ResultPresenterOutput: AnyObject {
     func updateTextView(original: String, converted: String)
+    func startLoading()
+    func stopLoading()
 }
 
 final class ResultPresenter: ResultPresenterInput {
@@ -36,13 +38,16 @@ final class ResultPresenter: ResultPresenterInput {
     }
 
     func tappedUpdate(text: String) {
+        view.startLoading()
         do {
             try model.update(original: text) { result in
                 DispatchQueue.main.async {
+                    self.view.stopLoading()
                     self.view.updateTextView(original: text, converted: result)
                 }
             }
         } catch {
+            view.stopLoading()
             print(error)
         }
     }

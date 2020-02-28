@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResultViewController" customModule="Yomeru" customModuleProvider="target">
             <connections>
                 <outlet property="convertedTextView" destination="5Bi-Bl-scZ" id="Kq8-2Y-RwE"/>
+                <outlet property="indicator" destination="stw-8o-8kR" id="PNB-u3-CUE"/>
                 <outlet property="originalTextView" destination="A5M-ps-ZA1" id="ARS-UT-sU6"/>
                 <outlet property="updateButton" destination="x3D-no-7tg" id="aE0-lA-iI5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -69,11 +70,16 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textView>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="stw-8o-8kR">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="5Bi-Bl-scZ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2tx-Qm-mv0"/>
+                <constraint firstItem="stw-8o-8kR" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="4Gi-l8-Thc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J7i-wa-cP5" secondAttribute="trailing" constant="10" id="A30-d2-wHN"/>
+                <constraint firstItem="stw-8o-8kR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="KAx-74-Q43"/>
                 <constraint firstItem="x3D-no-7tg" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LV2-Gs-udX"/>
                 <constraint firstItem="J7i-wa-cP5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="LxJ-rI-uHR"/>
                 <constraint firstItem="x3D-no-7tg" firstAttribute="top" secondItem="A5M-ps-ZA1" secondAttribute="bottom" constant="50" id="NJr-xL-r0e"/>

@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet private weak var textView: CustomTextView!
     @IBOutlet weak var convertButton: UIButton!
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
 
     private lazy var presenter = HomePresenter(view: self, model: HomeModel())
 
@@ -58,6 +59,16 @@ extension HomeViewController: HomePresenterOutput {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "close", style: .default, handler: nil))
         present(alert, animated: true)
+    }
+
+    func startLoading() {
+        indicator.startAnimating()
+        view.isUserInteractionEnabled = false
+    }
+
+    func stopLoading() {
+        indicator.stopAnimating()
+        view.isUserInteractionEnabled = true
     }
 
 }

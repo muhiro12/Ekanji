@@ -15,6 +15,8 @@ protocol HomePresenterInput {
 protocol HomePresenterOutput: AnyObject {
     func transitionToResult(original: String, converted: String)
     func showAlert(title: String?, message: String?)
+    func startLoading()
+    func stopLoading()
 }
 
 final class HomePresenter: HomePresenterInput {
@@ -28,14 +30,17 @@ final class HomePresenter: HomePresenterInput {
     }
 
     func tappedConvert(text: String) {
+        view.startLoading()
         do {
             try model.convert(text: text) { result in
                 DispatchQueue.main.async {
+                    self.view.stopLoading()
                     self.view.transitionToResult(original: text, converted: result)
                 }
             }
         } catch {
-            self.view.showAlert(title: "Sorry", message: error.localizedDescription)
+            view.stopLoading()
+            view.showAlert(title: "Sorry", message: error.localizedDescription)
         }
     }
 

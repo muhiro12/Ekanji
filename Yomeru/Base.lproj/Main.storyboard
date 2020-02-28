@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="cx4-5i-sZz">
-                                <rect key="frame" x="57" y="209.5" width="300" height="477"/>
+                                <rect key="frame" x="57" y="189.5" width="300" height="477"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bb6-vJ-xCm">
                                         <rect key="frame" x="78" y="0.0" width="144" height="42"/>
@@ -60,10 +60,15 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="keF-FX-A3F">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cx4-5i-sZz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="F9A-XU-5na"/>
+                            <constraint firstItem="keF-FX-A3F" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0BZ-9j-5hO"/>
+                            <constraint firstItem="cx4-5i-sZz" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-20" id="F9A-XU-5na"/>
+                            <constraint firstItem="keF-FX-A3F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="HA1-DN-spS"/>
                             <constraint firstItem="cx4-5i-sZz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QYk-Xt-hZw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -71,6 +76,7 @@
                     <tabBarItem key="tabBarItem" title="" image="house.fill" id="Uxc-HK-TnV"/>
                     <connections>
                         <outlet property="convertButton" destination="DLq-Kz-6Dm" id="HaZ-9Q-DuZ"/>
+                        <outlet property="indicator" destination="keF-FX-A3F" id="okT-dg-sve"/>
                         <outlet property="textView" destination="Yoq-NX-Eou" id="EaE-GL-HrL"/>
                     </connections>
                 </viewController>
