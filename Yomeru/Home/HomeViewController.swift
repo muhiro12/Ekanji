@@ -49,7 +49,7 @@ extension HomeViewController: HomePresenterOutput {
         view.inject(presenter: presenter)
 
         view.modalPresentationStyle = .fullScreen
-        textView.hero.id = "temp"
+        textView.hero.id = Identifier.Hero.originalTextView.rawValue
 
         present(view, animated: true)
     }

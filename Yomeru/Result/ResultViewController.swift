@@ -26,7 +26,7 @@ class ResultViewController: UIViewController {
         convertedTextView.text = presenter.converted
 
         hero.isEnabled = true
-        originalTextView.hero.id = "temp"
+        originalTextView.hero.id = Identifier.Hero.originalTextView.rawValue
         convertedTextView.hero.modifiers = [.translate(CGPoint(x: 0, y: 800))]
         updateButton.hero.modifiers = [.fade, .scale(), .translate(CGPoint(x: 0, y: 200))]
 
